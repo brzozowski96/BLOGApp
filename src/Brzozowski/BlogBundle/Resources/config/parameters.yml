@@ -1,0 +1,7 @@
+parameters:
+    appApiKey: JDH9JD6394JF8EDID73JR
+
+twig:
+    globals:
+        meta_description: Z pamiętnika domorosłego inwestora.
+        meta_author: Karol Brzozowski

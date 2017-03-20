@@ -1,0 +1,33 @@
+Array
+(
+    [name] => Karol Brzozowski
+    [email] => brzozowski96@gmail.com
+    [sex] => m
+    [birthdate] => DateTime Object
+        (
+            [date] => 1996-11-03 00:00:00.000000
+            [timezone_type] => 3
+            [timezone] => Europe/Berlin
+        )
+
+    [country] => PL
+    [course] => af
+    [invest] => Array
+        (
+            [0] => a
+            [1] => o
+        )
+
+    [comments] => Hę, żlę :P
+    [payment_file] => Symfony\Component\HttpFoundation\File\UploadedFile Object
+        (
+            [test:Symfony\Component\HttpFoundation\File\UploadedFile:private] => 
+            [originalName:Symfony\Component\HttpFoundation\File\UploadedFile:private] => SC2272_datasheet.pdf
+            [mimeType:Symfony\Component\HttpFoundation\File\UploadedFile:private] => application/pdf
+            [size:Symfony\Component\HttpFoundation\File\UploadedFile:private] => 61812
+            [error:Symfony\Component\HttpFoundation\File\UploadedFile:private] => 0
+            [pathName:SplFileInfo:private] => C:\xampp\tmp\phpC8BA.tmp
+            [fileName:SplFileInfo:private] => phpC8BA.tmp
+        )
+
+)

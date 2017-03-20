@@ -1,0 +1,49 @@
+{% extends "BrzozowskiBlogBundle:Blog:sidebarLayout.html.twig" %}
+
+    {% block pageTitle %}
+        Lista rejestracji | {{ parent() }}
+    {% endblock %}
+
+    {% block contentContainer %}
+        <article class="col-md-8">
+            <h1>Lista rejestracji</h1>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Imię i nazwisko</td>
+                        <td>Kraj</td>
+                        <td>Kurs</td>
+                        <td>Akcje</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in rows %}
+                        <tr>
+                            <td>{{ entry.id }}</td>
+                            <td>{{ entry.name }}</td>
+                            <td>{{ entry.country }}</td>
+                            <td>{{ entry.course }}</td>
+                            <td>
+                                {#{% if btns == TRUE %}#}
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="btn btn-sm btn-info" href="{{ path('brzozowski_blog_admin_details', {'id': entry.id }) }}">Zobacz szczegóły</a>
+                                    <a class="btn btn-sm btn-danger" href="{{ path('brzozowski_blog_admin_delete', {'id': entry.id }) }}">Usuń rekord</a>
+                                {% else %}
+                                    Nie posiadasz żadnych akcji
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5">Brak rejestracji</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <hr>
+            <h4>Zalogowany jako: {{ app.user.username }}</h4>
+            <h6>Posiadane role: {{ app.user.roles|join(', ') }}</h6>
+        </article>
+    {% endblock %}

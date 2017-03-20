@@ -1,0 +1,14 @@
+{% import 'BrzozowskiBlogBundle:Blog:macros.html.twig' as blogMacros %}
+
+{{ blogMacros.widgetList('Aktualnie obserwuję:', list, 'Wszystkie spółki', 'http://www.gpw.pl/lista_spolek') }}
+
+
+{#<section class="widget">#}
+    {#<h2>Aktualnie oberwuję</h2>#}
+    {#<ul>#}
+        {#{% for item in list %}#}
+        {#<li>{{ item }}</li>#}
+        {#{% endfor %}#}
+    {#</ul>#}
+    {#<p><a class="btn btn-default" href="http://www.gpw.pl/lista_spolek" role="button">Wszystkie spółki &raquo;</a></p>#}
+{#</section>#}

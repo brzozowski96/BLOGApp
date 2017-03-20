@@ -1,0 +1,37 @@
+{% extends "BrzozowskiBlogBundle::base.html.twig" %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+
+        <!-- Custom styles for this template -->
+        <link href="{{ asset('bundles/brzozowskiblog/css/sidebar.css') }}" rel="stylesheet">
+
+    {% endblock %}
+
+    {% block pageContainer %}
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row extra-padding">
+
+                {% block contentContainer %}
+                {% endblock %}
+
+                <div class="col-md-3 pull-right sidebar">
+                    {{ include('BrzozowskiBlogBundle:Blog/Widgets:gpwWidget.html.twig') }}
+
+                    {#{% include('BrzozowskiBlogBundle:Blog/Widgets:followingWidget.html.twig') %}#}
+                    {{ render(controller('BrzozowskiBlogBundle:Blog:followingWidget')) }}
+
+                    {#{% include('BrzozowskiBlogBundle:Blog/Widgets:walletWidget.html.twig') %}#}
+                    {{ render(controller('BrzozowskiBlogBundle:Blog:walletWidget')) }}
+
+                </div>
+            </div>
+
+        </div> <!-- /container -->
+    {% endblock %}
+
+    {% block javascripts %}
+        {{  parent() }}
+        <script src="{{ asset('bundles/brzozowskiblog/js/contact-page.js') }}"></script>
+    {% endblock %}

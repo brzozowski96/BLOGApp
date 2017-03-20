@@ -1,0 +1,14 @@
+{% import 'BrzozowskiBlogBundle:Blog:macros.html.twig' as blogMacros %}
+
+{{ blogMacros.widgetList('W portfelu', list, 'Pełny dziennik', path('brzozowski_blog_dziennik')) }}
+
+
+{#<section class="widget">#}
+    {#<h2>W portfelu</h2>#}
+    {#<ul>#}
+        {#{% for item in list %}#}
+            {#<li>{{ item }}</li>#}
+        {#{% endfor %}#}
+    {#</ul>#}
+    {#<p><a class="btn btn-default" href="dziennik.html" role="button">Pełny dziennik &raquo;</a></p>#}
+{#</section>#}

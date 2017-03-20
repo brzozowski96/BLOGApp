@@ -1,0 +1,3 @@
+brzozowski_blog:
+    resource: "@BrzozowskiBlogBundle/Resources/config/routing.yml"
+    prefix:   /

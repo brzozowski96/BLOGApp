@@ -1,0 +1,10 @@
+parameters:
+    brzozowski_blog.service.notification.class: Brzozowski\BlogBundle\Service\NotificationService
+
+services:
+#    brzozowski_blog.example:
+#        class: Brzozowski\BlogBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    blog_notification:
+        class: %brzozowski_blog.service.notification.class%
+        arguments: ["@session"]

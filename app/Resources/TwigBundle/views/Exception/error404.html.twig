@@ -1,0 +1,17 @@
+{# app/Resources/TwigBundle/views/Exception/error404.html.twig #}
+
+{% extends "BrzozowskiBlogBundle::base.html.twig.twig" %}
+
+{% block pageTitle %}
+    Nie znaleziono strony | {{ parent() }}
+{% endblock %}
+
+{% block pageContainer %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Nie znaleziono strony...</h1>
+            <p>Niestety strona, której szukasz nie została znaleziona, spróbuj odświeżyć stronę lub skontaktuj się z administracją.</p>
+            <p><a class="btn btn-primary btn-lg" href="{{ path('brzozowski_blog_glowna') }}" role="button">Wróć na stronę główną &raquo;</a></p>
+        </div>
+    </div>
+{% endblock %}

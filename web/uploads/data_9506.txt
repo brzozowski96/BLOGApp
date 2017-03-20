@@ -1,0 +1,28 @@
+Array
+(
+    [name] => Karol Brzozowski
+    [email] => brzozowski96@gmail.com
+    [sex] => 
+    [birthdate] => 
+    [country] => AT
+    [course] => at
+    [invest] => Array
+        (
+            [0] => o
+            [1] => f
+            [2] => etf
+        )
+
+    [comments] => Hej, danke for course :P
+    [payment_file] => Symfony\Component\HttpFoundation\File\UploadedFile Object
+        (
+            [test:Symfony\Component\HttpFoundation\File\UploadedFile:private] => 
+            [originalName:Symfony\Component\HttpFoundation\File\UploadedFile:private] => SC2272_datasheet.pdf
+            [mimeType:Symfony\Component\HttpFoundation\File\UploadedFile:private] => application/pdf
+            [size:Symfony\Component\HttpFoundation\File\UploadedFile:private] => 61812
+            [error:Symfony\Component\HttpFoundation\File\UploadedFile:private] => 0
+            [pathName:SplFileInfo:private] => C:\xampp\tmp\php16C8.tmp
+            [fileName:SplFileInfo:private] => php16C8.tmp
+        )
+
+)

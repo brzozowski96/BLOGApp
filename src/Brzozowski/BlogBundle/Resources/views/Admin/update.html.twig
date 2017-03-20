@@ -1,0 +1,15 @@
+{% extends "BrzozowskiBlogBundle:Blog:sidebarLayout.html.twig" %}
+
+{% form_theme form 'BrzozowskiBlogBundle:Form:bootstrap_3_horizontal_layout.html.twig' %}
+
+{% block pageTitle %}
+    Rejestracja #{{ register.id }} | {{ parent() }}
+{% endblock %}
+
+{% block contentContainer %}
+    <article class="col-md-8">
+        <h1>Rejestracja #{{ register.id }}</h1>
+
+        {{ form(form, {'attr': {'novalidate': 'true'}}) }}
+    </article>
+{% endblock %}

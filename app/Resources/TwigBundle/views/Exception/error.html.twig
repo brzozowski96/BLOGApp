@@ -1,0 +1,17 @@
+{# app/Resources/TwigBundle/views/Exception/error.html.twig #}
+
+{% extends "BrzozowskiBlogBundle::base.html.twig.twig" %}
+
+{% block pageTitle %}
+    Wystąpił błąd | {{ parent() }}
+{% endblock %}
+
+{% block pageContainer %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Błąd: {{ status_code }}</h1>
+            <p>{{ status_text }}</p>
+            <p><a class="btn btn-primary btn-lg" href="{{ path('brzozowski_blog_glowna') }}" role="button">Wróć na stronę główną &raquo;</a></p>
+        </div>
+    </div>
+{% endblock %}

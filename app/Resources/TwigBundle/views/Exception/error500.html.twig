@@ -1,0 +1,17 @@
+{# app/Resources/TwigBundle/views/Exception/error500.html.twig #}
+
+{% extends "BrzozowskiBlogBundle::base.html.twig.twig" %}
+
+{% block pageTitle %}
+    Błąd serwera | {{ parent() }}
+{% endblock %}
+
+{% block pageContainer %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Ups... Błąd serwera.</h1>
+            <p>Serwer dostał zadyszki. Odśwież stronę lub odwiedź blog za chwilę.</p>
+            <p><a class="btn btn-primary btn-lg" href="{{ path('brzozowski_blog_glowna') }}" role="button">Wróć na stronę główną &raquo;</a></p>
+        </div>
+    </div>
+{% endblock %}

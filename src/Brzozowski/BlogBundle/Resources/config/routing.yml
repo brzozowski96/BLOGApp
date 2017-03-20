@@ -1,0 +1,7 @@
+brzozowski_blog_homepage:
+    path:     /
+    defaults: { _controller: BrzozowskiBlogBundle:Blog:index }
+
+brzozowski_blog_annotations:
+    resource: "@BrzozowskiBlogBundle/Controller/"
+    type: annotation

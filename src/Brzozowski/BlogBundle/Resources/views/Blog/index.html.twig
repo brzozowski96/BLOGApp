@@ -1,0 +1,39 @@
+    {% extends "BrzozowskiBlogBundle::base.html.twig" %}
+
+    {% block pageTitle %}
+        Strona główna | {{ parent() }}
+    {% endblock %}
+
+    {% block pageContainer %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="text">
+                <h1>Być jak Warren Buffett!</h1>
+                <p>Jest powszechnie uważany za jednego z najlepszych inwestorów na świecie. Warren Buffett, często określany jako "legendarny inwestor", jest głównym akcjonariuszem, przewodniczącym rady nadzorczej oraz prezesem Berkshire Hathaway. Od wielu lat konsekwentnie utrzymuje się na szczytach list najbogatszych ludzi świata.</p>
+                <p><a class="btn btn-primary btn-lg" href="{{ path('brzozowski_blog_dziennik') }}" role="button">Moja droga na szczyt &raquo;</a></p>
+            </div>
+            <img class="bull" src="{{ asset('bundles/brzozowskiblog/img/bull.jpg') }}" alt="">
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+
+            <div class="col-md-4">
+                {{ include('BrzozowskiBlogBundle:Blog/Widgets:gpwWidget.html.twig') }}
+            </div>
+
+            <div class="col-md-4">
+                {#{% include('BrzozowskiBlogBundle:Blog/Widgets:followingWidget.html.twig') %}#}
+                {{ render(controller('BrzozowskiBlogBundle:Blog:followingWidget')) }}
+            </div>
+
+            <div class="col-md-4">
+                {#{% include('BrzozowskiBlogBundle:Blog/Widgets:walletWidget.html.twig') %}#}
+                {{ render(controller('BrzozowskiBlogBundle:Blog:walletWidget')) }}
+            </div>
+        </div>
+
+    </div> <!-- /container -->
+    {% endblock %}
