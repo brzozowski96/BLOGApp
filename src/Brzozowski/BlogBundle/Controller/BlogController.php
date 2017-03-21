@@ -74,9 +74,54 @@ class BlogController extends Controller
      *
      * @Template
      */
-    public function contactAction()
+    public function contactAction(Request $request)
     {
-        return array();
+        $email = $request->get('email');
+
+        $adminEmail = "brzozowski96@gmail.com";
+        $adminName = "Karol Brzozowski";
+
+        if(isset($email)) {
+
+            $name = $request->get('name');
+            $message = $request->get('message');
+            $Session = $this->get('session');
+
+            $validationSuccess = true;
+            if($name == "") {
+                $Session->getFlashBag()->add('danger', 'Podaj poprawne imię i nazwisko!');
+                $validationSuccess = false;
+            }
+            if(! preg_match('/^[a-zA-Z0-9\.\-_]+\@[a-zA-Z0-9\.\-_]+\.[a-z]{2,4}$/D', $email)) {
+                $Session->getFlashBag()->add('danger', 'Podaj poprawny adres e-mail!');
+                $validationSuccess = false;
+            }
+            if($message == "") {
+                $Session->getFlashBag()->add('danger', 'Pole wiadomości nie może być puste!');
+                $validationSuccess = false;
+            }
+            if(! $validationSuccess) return array(
+                'name' => $name,
+                'email' => $email,
+                'message' => $message
+            );
+
+            $message = \Swift_Message::newInstance()
+                ->setSubject('Potwierdzenie rejestracji')
+                ->setFrom(array($email => $name))
+                ->setTo(array($adminEmail => $adminName))
+                ->setBody($message, 'text/html');
+
+            $this->get('mailer')->send($message);
+
+            $Session->getFlashBag()->add('success', 'Twoja wiadomość została wysłana!');
+        }
+
+        return array(
+            'name' => "",
+            'email' => "",
+            'message' => ""
+        );
     }
 
     /**
